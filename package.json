@@ -1,0 +1,33 @@
+{
+  "name": "final",
+  "engines" : { "node" : ">=12.0" },
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "growhardware <growhardware@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "backpack",
+    "build": "backpack build",
+    "start": "node build/main",
+    "eslint": "eslint ./src/"
+  },
+  "dependencies": {
+    "backpack-core": "^0.8.4",
+    "bcrypt": "^3.0.8",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.3",
+    "http": "^0.0.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.9.16",
+    "mongoose-paginate": "^5.0.3",
+    "socket.io": "^2.3.0",
+    "socketio-jwt": "^4.6.0",
+    "uuid": "^3.4.0",
+    "validator": "^10.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.10.0"
+  }
+}
