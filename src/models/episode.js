@@ -9,6 +9,11 @@ const EpisodeSchema = new mongoose.Schema(
       ref: 'Director',
       required: true
     },
+    season: {
+      type: ObjectId,
+      ref: 'Season',
+      required: true
+    },
     title: {
       type: 'String',
       required: true,
@@ -32,6 +37,7 @@ EpisodeSchema.plugin(mongoosePaginate)
 EpisodeSchema.post('save', (episode, next) => {
   episode
     .populate('director')
+    .populate('season')
     .execPopulate()
     .then(() => next())
 })

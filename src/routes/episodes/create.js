@@ -5,6 +5,7 @@ const create = async (req, res) => {
   try {
     const episode = new Episode({
       director: mongoose.Types.ObjectId(req.body.director),
+      season: mongoose.Types.ObjectId(req.body.season),
       title: req.body.title,
       duration: req.body.duration
     })
