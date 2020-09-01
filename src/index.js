@@ -10,9 +10,9 @@ const app = express();
 app.use(cors());
 
 const server = http.createServer(app);
-
+// put your atlas connection string
 const uri =
-  "mongodb+srv://improvein:lzjM7OZn65IrfFlr@cluster0-s7lnh.mongodb.net/test?retryWrites=true&w=majority";
+  "mongodb+srv://";
 
 const opt = {
   useNewUrlParser: true,
