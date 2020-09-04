@@ -1,8 +1,9 @@
-import express from "express";
-import mongoose from "mongoose";
-import routes from "./routes/index";
-import http from "http";
-import cors from "cors";
+import express from 'express';
+import mongoose from 'mongoose';
+import routes from './routes/index';
+import http from 'http';
+import cors from 'cors';
+import functions from 'firebase-functions';
 
 const port = process.env.PORT || 5000;
 
@@ -12,7 +13,7 @@ app.use(cors());
 const server = http.createServer(app);
 // put your atlas connection string
 const uri =
-  "mongodb+srv://";
+  'mongodb+srv://ghapi:Ct7eEBdtBzDbiVWG@cluster0.s7lnh.mongodb.net/test?retryWrites=true&w=majority';
 
 const opt = {
   useNewUrlParser: true,
@@ -36,3 +37,5 @@ mongoose.connect(uri, opt).then(
     console.log(`Error al conectar con base de datos: ${err}`);
   }
 );
+
+exports.app = functions.https.onRequest(app);
